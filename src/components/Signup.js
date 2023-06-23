@@ -80,6 +80,15 @@ const Signin = () => {
       // User creation successful
       const user = userCredential.user;
       console.log('User created:', user);
+      addDoc(collection(db, 'test'), {
+        name: username,
+        name: name,
+        email: email,
+        password: password,
+        // completed: false,
+        created: Timestamp.now()
+   
+      })
     }
     )
       console.log(addDoc, "ssssssssssssssssssssssss")
@@ -112,7 +121,7 @@ const Signin = () => {
               <h4>Sign Up to Jampack</h4>
             </div>
             <div className='create'>
-              <p class="text--center">Already a member ?  <a to="">Sign in</a> </p>
+              <p class="text--center">Already a member ?  <a href="signin">Sign in</a> </p>
             </div>
           </div>
 
