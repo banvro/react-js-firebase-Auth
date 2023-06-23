@@ -1,0 +1,170 @@
+.main{
+    display: flex;
+    align-content: space-between;
+    /* flex-wrap: nowrap; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+margin-top: 6%;
+margin-bottom: 2%;
+}
+.pic img{
+    width: 33px;
+}
+.pic{
+    width: 65px;
+}
+.sign{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 3%;
+
+}
+form.row{
+    margin-top: 2%;
+    border: 2px solid #dfd5d5a1;
+    /* box-shadow: inset 0 -3em 3em rgba(255, 255, 255, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3); */
+    width: 500px;
+}
+form.mains{
+    width: 400px;
+}
+.col-lg-12.for{
+    display: flex;
+    justify-content: center;
+}
+.lb label{
+    display: flex;
+    justify-content: space-between;
+
+}
+.lb h6{
+    color:  #008080; 
+    font-size: 14px;
+}
+.imm img{
+    width: 25px;
+}
+.sign h4{
+
+        font-weight: 500;
+        font-size: medium;
+}
+.form-control{
+    font-weight: 400;
+    font-size: 15px;
+    /* color: #4e0909; */
+    border-width: 2px;
+    padding: 8px;
+
+
+}
+
+.pass-icon{
+    display: flex;
+    justify-content: end;
+    margin-top: -31px;
+    margin-right: 10px;
+}
+
+.checkform {
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    background-color:  #008080; 
+    width: 100%;
+
+}
+
+.create {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: small;
+    color:#8c8c8c; ;
+}
+.create a{
+    color: #008080;
+}
+.pass{
+    
+    margin-top: -2px;
+}element.style {
+    padding: 0px 24px;
+}
+.for{
+    padding: 0px 30px;
+}
+.mb-3{
+    padding: 0px 20px;
+}
+
+.form-check-label{
+    font-weight: 400;
+    color: #8c8c8c;
+}
+
+
+.form-control::placeholder {
+  color: #8c8c8c;
+  font-weight: 400;
+  font-size: 16px;
+  padding-left: 8px;
+  /* Firefox */
+}
+.head h1{
+    font-weight: 700;
+    font-size: 31px;
+
+}
+.sign h4 {
+    font-weight: 600;
+    font-size: 23px;
+}
+.form-label{
+           font-weight: 400;
+    
+}
+.form-check{
+    font-size: 14px;
+}
+.btn{
+    color: white;
+    font-weight: 600;
+ 
+    padding: 8px;
+
+}
+.btn:hover{
+    background-color: #008080;
+    color: white;
+}
+.signbtn{
+    padding: 0px 20px;
+}
+.row{
+    padding: 16px 0px;
+}
+.form-check-input:checked{
+    background-color: #008080  !important;
+    border: 0;
+ }
+ .form-check-input:focus, .label::after, label.form-check-label:focus, .form-check-input::after, .form-check-input:not(:disabled):not(.disabled):active:focus {
+    color: white;
+    outline: 0;
+    border: 0;
+    box-shadow: 0 0 0 0.1rem #008080 !important;
+ }
+ .field-icon {
+    float: right;
+    margin-left: -31px;
+    margin-top: -26px;
+    position: relative;
+    z-index: 2;
+    margin-right: 14px;
+    color:#8c8c8c
+}

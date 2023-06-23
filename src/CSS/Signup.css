@@ -1,0 +1,168 @@
+.signbtn1{
+   
+}
+.btn1{
+    width: 100%;
+   
+
+}
+.rounded-pill{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    border: 1px solid;
+    border-color:#8c8c8c;
+    background-color:white;
+    padding: 6px;
+}
+.signup{
+    font-weight: 400;
+}
+
+  .horizontal-line {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1em 0;
+    
+  }
+
+  .horizontal-line::before,
+  .horizontal-line::after {
+    content: "";
+    flex-grow: 1;
+    background-color:#cececea4;
+    height: 1px;
+  }
+
+  .or-text {
+    margin: 0 0.5em;
+    background-color: white;
+    padding: 0 0.5em;
+    font-weight: 500;
+  }
+  .mainsignup{
+    display: flex;
+    align-content: space-between;
+    /* flex-wrap: nowrap; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+form.needs-validations{
+    
+  padding: 0px 15px;
+         margin-top: 0%;
+    }
+.field-icon1{
+
+letter-spacing: 1px;
+
+  float: right;
+    margin-left: -31px;
+    margin-top: -26px;
+    position: relative;
+    z-index: 2;
+    font-size: 11px;
+    margin-right: 14px;
+    color: #008080;
+    font-weight: 500;
+}
+.but{
+  background-color: #008080;
+  color: white;
+  font-weight: 600;
+  padding: 6px;
+}
+.primary{
+  background-color: 	#3079e5;
+  color: white;
+  font-weight: 500;
+  padding: 6px;
+}
+.signupfb{
+  font-weight: 500;
+}
+.signupg{
+  font-weight: 500;
+}
+ .up{
+  font-weight: 500;
+}
+.d-grid{
+  margin-top: -1%;
+}
+.up1::placeholder {
+  color: #8c8c8c;
+  font-weight: 400;
+  font-size: 16px;
+  padding-left: 10px;
+  
+  /* Firefox */
+}
+
+.name{
+  padding: 0px 20px;
+  margin-top: -2px;
+
+}
+.form-control {
+padding: 6px;
+border-width: 1px;
+}
+.terms{
+  color: #008080;
+}
+.termss{
+  font-size: 15px;
+  margin-top: -15px;
+  /* padding: 0 34px; */
+    letter-spacing: 0.6px;
+
+}
+.signbtn1{
+  padding: 0px 20px;
+  padding-bottom: 30px;
+}
+.height{
+  margin-bottom: 8%;
+}
+
+.letrow{
+display: flex;
+
+    justify-content: center;
+}
+.letrow .name{
+  padding: 0px 12px;
+}
+
+.setthis{
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width:800px) {
+  .name{
+    padding-left: 3px;
+    padding-right: 34px;
+  }
+  .letrow{
+    display: flex;
+    flex-direction: column;
+  }
+  .col-md-6{
+    display: block;
+  }
+}
+
+.formscheck{
+  padding: 0px 18px;
+}
+.rounded-pill:hover{
+  background-color: #3079e5;
+  color: white;
+}
