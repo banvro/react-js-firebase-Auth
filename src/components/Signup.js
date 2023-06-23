@@ -13,10 +13,12 @@ const Signin = () => {
   // code for sign up wiuth gmailll
   const [value, setValue] = useState('')
   const handleClick = () => {
+    console.log("shhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
     signInWithPopup(auth, provider).then((data) => {
       setValue(data.user.email)
       localStorage.setItem("email", data.user.email)
-      window.location.href = '/dashboard';
+      // window.location.href = '/dashboard';
+      console.log(auth,data,signInWithPopup,setValue,  "qqqqqqqqqqqqqqqq")
     })
   }
 
@@ -72,25 +74,22 @@ const Signin = () => {
 // alert("submited")
 
     try {
-    
-
-      addDoc(collection(db, 'test'), {
-        name: username,
-        name: name,
-        email: email,
-        password: password,
-        // completed: false,
-        created: Timestamp.now()
-   
-      })
-    
+      
+      createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // User creation successful
+      const user = userCredential.user;
+      console.log('User created:', user);
+    }
+    )
+      console.log(addDoc, "ssssssssssssssssssssssss")
  
       // onClose()
     } catch (err) {
       alert(err)
     }
 
-    window.location.href = '/dashboard';
+    // window.location.href = '/dashboard';
   }
 
   return (
