@@ -46,6 +46,11 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
     const handleSignOut = () => {
         auth.signOut()
           .then(() => {
+            const tokenw = localStorage.getItem('Accesstoken');
+            localStorage.removeItem('Accesstoken');
+            localStorage.removeItem('Refreshtoken');
+            localStorage.removeItem('email');
+            console.log(tokenw, "yyyyyyyyyy")
             // Sign-out successful
             console.log('User signed out successfully.');
             // Add any additional code you want to run after sign-out

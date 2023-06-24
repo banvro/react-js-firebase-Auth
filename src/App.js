@@ -33,7 +33,7 @@ function App() {
               render={() => (token ? <Redirect to="/dashboard" /> : <Forget />)}
             />
             <Route
-              path="/dashboards"
+              path="/dashboard"
               render={() => (token ? <Dashboard /> : <Redirect to="/signin" />)}
             />
             <Route path="/auth" render={(props) => <AuthRoutes {...props} />} />
