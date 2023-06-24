@@ -21,7 +21,7 @@ function App() {
       <ScrollToTop>
         <AuthProvider>
           <Switch>
-            <Redirect exact from="/" to="/dashboard" />
+            {/* <Redirect exact from="/" to="/dashboard" /> */}
             {/* <Route
               path="/signin"
               render={() => (token ? <Redirect to="/dashboard" /> : <Signin />)}
@@ -40,12 +40,12 @@ function App() {
             />  */}
             {/* <Route path="/signin" component={Signin} /> */}
             {/* <Route path="/auth" render={(props) => <AuthRoutes {...props} />} /> */}
-            {token ?
+            {token !==null?
 
              <>
-             <Dashboard /> 
-             {/* <PrivateRoute path="/" render={(props) => <ClassicRoutes {...props} />} />
-             < Redirect exact from="/" to="/dashboard" /> */}
+             {/* <Dashboard />  */}
+           <PrivateRoute path="/" render={(props) => <ClassicRoutes {...props} />} />
+             < Redirect exact from="/" to="/dashboard" /> 
              </> 
               :
               <Route path="/signin" component={Signin} />

@@ -8,7 +8,8 @@ import Signin from './Login/Signin';
 import Signup from './Login/Signup';
 import Forget from './Login/Forget';
 import Dashboard from './views/Dashboard';
-import { AuthProvider } from './Login/AuthProvider';
+import { AuthProvider } from './Login/AuthContext';
+import PrivateRoute from './Login/PrivateRoute';
 
 function App() {
   const token = localStorage.getItem('Accesstoken');
@@ -19,25 +20,13 @@ function App() {
       <ScrollToTop>
         <AuthProvider>
           <Switch>
+            
+
+          <Route path="/signin" component={Signin} />
             <Redirect exact from="/" to="/dashboard" />
-            <Route
-              path="/signin"
-              render={() => (token ? <Redirect to="/dashboard" /> : <Signin />)}
-            />
-            <Route
-              path="/signup"
-              render={() => (token ? <Redirect to="/dashboard" /> : <Signup />)}
-            />
-            <Route
-              path="/forget"
-              render={() => (token ? <Redirect to="/dashboard" /> : <Forget />)}
-            />
-            <Route
-              path="/dashboard"
-              render={() => (token ? <Dashboard /> : <Redirect to="/signin" />)}
-            />
+             
             <Route path="/auth" render={(props) => <AuthRoutes {...props} />} />
-            <Route path="/" render={(props) => <ClassicRoutes {...props} />} />
+            <PrivateRoute path="/" render={(props) => <ClassicRoutes {...props} />} />
           </Switch>
         </AuthProvider>
       </ScrollToTop>

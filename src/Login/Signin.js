@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import '../CSS/Signin.css'
 import {auth} from "./Firebase"
 import { Redirect,useHistory } from 'react-router-dom';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import { useAuth } from '../Login/AuthContext'
 const Signin = () => {
 
   const [isVisible, setVisible] = useState(false);
   const [email,setEmail]=useState("");
   const [password,setpassword]=useState("");
+  // const{login}=useContext(AuthContext)
+  const { login } = useAuth()
 
   let history = useHistory();
   const toggle = () => {
@@ -43,7 +46,9 @@ const onLogin = (e) => {
       let user2=userCredential.user.accessToken
       localStorage.setItem('Accesstoken', user2);
       localStorage.setItem('Refreshtoken', user);
-      // Redirect to='/dashboard' 
+      login(email.current.value, password.current.value)
+      // window.location.href = '/';
+      // <Redirect to='/dashboard' />
       history.push("/");
       console.log(user);
       console.log(user2,'754656');
