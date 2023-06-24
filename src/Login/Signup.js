@@ -8,7 +8,7 @@ import { db, auth, provider } from '../firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { getFirestore } from 'firebase/firestore';
 
-const Signin = () => {
+const Signup = () => {
 
   // code for sign up wiuth gmailll
   const [value, setValue] = useState('')
