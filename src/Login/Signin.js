@@ -46,12 +46,15 @@ const onLogin = (e) => {
       // navigate("/home")
       console.log(user);
       console.log(user2,'754656');
+     console.log("succesfully login")
   })
   .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode, errorMessage)
+      console.log("invalid please check your email and password")
   });
+
  
 }
   return (

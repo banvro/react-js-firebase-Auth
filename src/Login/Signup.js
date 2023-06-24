@@ -4,7 +4,7 @@ import '../CSS/Signup.css'
 
 import { signInWithPopup } from "firebase/auth";
 
-import { db, auth, provider } from '../firebase';
+import { db, auth, provider } from '../Login/Firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { getFirestore } from 'firebase/firestore';
 
@@ -13,7 +13,7 @@ const Signup = () => {
   // code for sign up wiuth gmailll
   const [value, setValue] = useState('')
   const handleClick = () => {
-    console.log("shhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+    console.log("s hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
     signInWithPopup(auth, provider).then((data) => {
       setValue(data.user.email)
       localStorage.setItem("email", data.user.email)
@@ -116,7 +116,7 @@ const Signup = () => {
 
       <div className='col-lg-12 for height' >
         <form class="row g-3 needs-validations"
-        //  onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
           novalidate>
 
           <div className='col-md-12'>
@@ -124,7 +124,7 @@ const Signup = () => {
               <h4>Sign Up to Jampack</h4>
             </div>
             <div className='create'>
-              <p class="text--center">Already a member ?  <a to="">Sign in</a> </p>
+              <p class="text--center">Already a member ?  <a href="signin">Sign in</a> </p>
             </div>
           </div>
 
@@ -133,7 +133,7 @@ const Signup = () => {
 
           <div class="d-grid gap-3 col-12 mx-auto">
             <button class="btn1" id='google' 
-            // onClick={handleClick}
+             onClick={handleClick}
              className="rounded-pill" type="button">
               <i class="fa-brands fa-google"> </i> &nbsp;&nbsp;
               <span className='signupg'>Sign Up With Gmail</span>
