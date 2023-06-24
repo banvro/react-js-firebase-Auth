@@ -1,44 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
-import { Link, Route ,Routes,Navigate} from 'react-router-dom';
-
-import Signin from './components/Signin';
-import Signup from './components/Signup';
-import AuthDetails from './AuthDetails';
-import Dashboard from './components/Dashboard';
-
+import React from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import ClassicRoutes from './routes/Classic';
+import AuthRoutes from './routes/AuthRoutes';
+import "bootstrap/js/src/collapse";
+import ScrollToTop from './utils/ScrollToTop';
+import Signin from './Login/Signin';
+import Signup from './Login/Signup';
+import Forget from './Login/Forget';
+import { AuthProvider } from "./Login/AuthProvider";
 function App() {
-  const isAuthenticated = false;
- 
   return (
-
-
-<>
-{/* <Dashboard/>
-
-<Signin/>
-<Signup/> */}
-<AuthDetails/>
-
-
-
-
-<Routes>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route
-          path="/"
-          element={isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/signin" />}
-        />
-      </Routes>
-
-
-
-
-</>
-    );
+    <>
+    {/* <Signin/> */}
+    {/* <Signup/> */}
+    {/* <Forget/> */}
+      <BrowserRouter>
+        <BrowserRouter >
+          <ScrollToTop>
+          <AuthProvider>
+            <Switch>
+              <Redirect exact from="/" to="/dashboard" />
+              <Route path="/signin" component={Signin} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/forget" component={Forget} />
+              
+              <Route path="/auth" render={(props) => <AuthRoutes {...props} />} />
+        
+              <Route path="/" render={(props) => <ClassicRoutes {...props} />} />
+       
+            </Switch>
+            </AuthProvider>
+          </ScrollToTop>
+        </BrowserRouter>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;

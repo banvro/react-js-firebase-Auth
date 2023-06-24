@@ -135,14 +135,20 @@ form.mains{
 .btn{
     color: white;
     font-weight: 600;
- 
+ background-color:#008080;
     padding: 8px;
 
 }
-.btn:hover{
+.btnss{
+    color: white;
+    font-weight: 600;
+ background-color:#008080;
+    padding: 8px;
+}
+/* .btn:hover{
     background-color: #008080;
     color: white;
-}
+} */
 .signbtn{
     padding: 0px 20px;
 }
