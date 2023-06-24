@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../CSS/Signin.css'
 import {auth} from "./Firebase"
-import { useNavigate } from 'react-router-dom';
+import { Redirect,useHistory } from 'react-router-dom';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 const Signin = () => {
 
@@ -9,7 +9,7 @@ const Signin = () => {
   const [email,setEmail]=useState("");
   const [password,setpassword]=useState("");
 
-//   const navigate = useNavigate();
+  let history = useHistory();
   const toggle = () => {
     setVisible(!isVisible);
   };
@@ -43,7 +43,8 @@ const onLogin = (e) => {
       let user2=userCredential.user.accessToken
       localStorage.setItem('Accesstoken', user2);
       localStorage.setItem('Refreshtoken', user);
-      // navigate("/home")
+      // Redirect to='/dashboard' 
+      history.push("/");
       console.log(user);
       console.log(user2,'754656');
      console.log("succesfully login")

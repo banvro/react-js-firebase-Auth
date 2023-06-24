@@ -7,33 +7,52 @@ import ScrollToTop from './utils/ScrollToTop';
 import Signin from './Login/Signin';
 import Signup from './Login/Signup';
 import Forget from './Login/Forget';
+import Dashboard from './views/Dashboard/index';
 import { AuthProvider } from "./Login/AuthProvider";
+import PrivateRoute from './Login/PrivateRoute';
+
 function App() {
+
+  const token = localStorage.getItem('Accessftoken');
+  console.log(token, "qqqqqqqqqqqqqqqqqqqqqqq")
+
   return (
-    <>
-    {/* <Signin/> */}
-    {/* <Signup/> */}
-    {/* <Forget/> */}
-      <BrowserRouter>
-        <BrowserRouter >
-          <ScrollToTop>
-          <AuthProvider>
-            <Switch>
-              <Redirect exact from="/" to="/dashboard" />
+    <BrowserRouter>
+      <ScrollToTop>
+        <AuthProvider>
+          <Switch>
+            <Redirect exact from="/" to="/dashboard" />
+            {/* <Route
+              path="/signin"
+              render={() => (token ? <Redirect to="/dashboard" /> : <Signin />)}
+            />
+            <Route
+              path="/signup"
+              render={() => (token ? <Redirect to="/dashboard" /> : <Signup />)}
+            />
+            <Route
+              path="/forget"
+              render={() => (token ? <Redirect to="/dashboard" /> : <Forget />)}
+            />*/}
+            {/* <Route
+              path="/dashboard"
+            nder={() => (token ? <Dashboard /> : <Redirect to="/signin" />)}
+            />  */}
+            {/* <Route path="/signin" component={Signin} /> */}
+            {/* <Route path="/auth" render={(props) => <AuthRoutes {...props} />} /> */}
+            {token ?
+
+             <>
+             <PrivateRoute path="/" render={(props) => <ClassicRoutes {...props} />} />
+             < Redirect exact from="/" to="/dashboard" />
+             </> 
+              :
               <Route path="/signin" component={Signin} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/forget" component={Forget} />
-              
-              <Route path="/auth" render={(props) => <AuthRoutes {...props} />} />
-        
-              <Route path="/" render={(props) => <ClassicRoutes {...props} />} />
-       
-            </Switch>
-            </AuthProvider>
-          </ScrollToTop>
-        </BrowserRouter>
-      </BrowserRouter>
-    </>
+            }
+          </Switch>
+        </AuthProvider>
+      </ScrollToTop>
+    </BrowserRouter>
   );
 }
 
