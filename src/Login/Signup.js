@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react'
-
+import { getAuth, createUserWithEmailAndPassword,fetchSignInMethodsForEmail } from 'firebase/auth';
 import '../CSS/Signup.css'
 
+import { signInWithPopup } from "firebase/auth";
 
-const Signup = () => {
+import { db, auth, provider } from '../firebase';
+import { collection, addDoc, Timestamp } from 'firebase/firestore'
+import { getFirestore } from 'firebase/firestore';
+
+const Signin = () => {
 
   // code for sign up wiuth gmailll
   const [value, setValue] = useState('')
-//   const handleClick = () => {
-//     signInWithPopup(auth, provider).then((data) => {
-//       setValue(data.user.email)
-//       localStorage.setItem("email", data.user.email)
-//       window.location.href = '/dashboard';
-//     })
-//   }
+  const handleClick = () => {
+    console.log("shhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+    signInWithPopup(auth, provider).then((data) => {
+      setValue(data.user.email)
+      localStorage.setItem("email", data.user.email)
+      // window.location.href = '/dashboard';
+      console.log(auth,data,signInWithPopup,setValue,  "qqqqqqqqqqqqqqqq")
+    })
+  }
 
   useEffect(() => {
     setValue(localStorage.getItem('email'))
@@ -66,33 +73,34 @@ const Signup = () => {
 
 // alert("submited")
 
-//     try {
-//       fetchSignInMethodsForEmail(auth, email)
-//        .then((signInMethods) => {
-//         if (signInMethods.length > 0) {
-//           setErrorMessage('Email is already in use. Please use a different email.');
-//           alert("EMAIL ALREADY EXIST")
-//           console.log("ERRROR")
-//         }else{
-
-//       addDoc(collection(db, 'test'), {
-//         name: username,
-//         name: name,
-//         email: email,
-//         password: password,
-//         // completed: false,
-//         created: Timestamp.now()
+    try {
+      
+      createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // User creation successful
+      const user = userCredential.user;
+      console.log('User created:', user);
+      addDoc(collection(db, 'test'), {
+        name: username,
+        name: name,
+        email: email,
+        password: password,
+        // completed: false,
+        created: Timestamp.now()
    
-//       })
-//     }
-//   })
-//       // onClose()
-//     } catch (err) {
-//       alert(err)
-//     }
+      })
+    }
+    )
+      console.log(addDoc, "ssssssssssssssssssssssss")
+ 
+      // onClose()
+    } catch (err) {
+      alert(err)
+    }
 
-//     window.location.href = '/dashboard';
+    // window.location.href = '/dashboard';
   }
+
 
   return (
     <>
