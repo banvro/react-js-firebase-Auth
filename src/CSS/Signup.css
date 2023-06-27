@@ -138,7 +138,7 @@ display: flex;
     justify-content: center;
 }
 .letrow .name{
-  padding: 0px 12px;
+  padding: 0px 5px;
 }
 
 .setthis{
@@ -156,7 +156,13 @@ display: flex;
   }
   .col-md-6{
     display: block;
+    margin-left: -21px;    
+    margin-top: 18px;display: block;
   }
+
+  .letrow .name {
+    padding: 0 13px;
+}
 }
 
 .formscheck{
@@ -166,3 +172,8 @@ display: flex;
   background-color: #3079e5;
   color: white;
 } */
+
+
+.fizus{
+  margin-left: -21px;
+}

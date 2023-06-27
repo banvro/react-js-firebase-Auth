@@ -8,13 +8,10 @@ import HkTooltip from '../../components/@hk-tooltip/HkTooltip';
 import AddLabel from './AddLabel';
 import AddTag from './AddTag';
 import CreateNewContact from './CreateNewContact';
-
-
 const ContactAppSidebar = () => {
     const [addLabels, setAddLabels] = useState(false);
     const [addTags, setAddTags] = useState(false);
     const [addNewContact, setAddNewContact] = useState(false);
-
     return (
         <>
             <Nav className="contactapp-sidebar">
@@ -32,7 +29,7 @@ const ContactAppSidebar = () => {
                                                 <Inbox />
                                             </span>
                                         </span>
-                                        <span className="nav-link-text">All Contacts</span>
+                                        <span className="nav-link-text">All Assets</span>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
@@ -42,7 +39,7 @@ const ContactAppSidebar = () => {
                                                 <Star />
                                             </span>
                                         </span>
-                                        <span className="nav-link-text">Important</span>
+                                        <span className="nav-link-text">Active</span>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
@@ -52,7 +49,7 @@ const ContactAppSidebar = () => {
                                                 <Archive />
                                             </span>
                                         </span>
-                                        <span className="nav-link-text">Archive</span>
+                                        <span className="nav-link-text">Breakdown</span>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
@@ -62,45 +59,45 @@ const ContactAppSidebar = () => {
                                                 <Edit />
                                             </span>
                                         </span>
-                                        <span className="nav-link-text">Pending</span>
+                                        <span className="nav-link-text">Favorite</span>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link>
-                                        <span className="nav-icon-wrap">
+                                        {/* <span className="nav-icon-wrap">
                                             <span className="feather-icon">
                                                 <Trash2 />
                                             </span>
-                                        </span>
-                                        <span className="nav-link-text">Deleted</span>
+                                        </span> */}
+                                        {/* <span className="nav-link-text">Deleted</span> */}
                                     </Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </div>
                         <div className="separator separator-light" />
-                        <div className="menu-group">
+                    <div className="menu-group">
                             <Nav className="nav-light navbar-nav flex-column">
                                 <Nav.Item>
                                     <Nav.Link>
                                         <span className="nav-icon-wrap">
-                                            <span className="feather-icon">
+                                            {/* <span className="feather-icon">
                                                 <Upload />
-                                            </span>
+                                            </span> */}
                                         </span>
-                                        <span className="nav-link-text">Export</span>
+                                        <span className="nav-link-text changes-categories" style={{color:"#0DB73A"}}>Categories</span>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link>
-                                        <span className="nav-icon-wrap">
-                                            <span className="feather-icon">
+                                         <span className="nav-icon-wrap">
+                                            {/* <span className="feather-icon">
                                                 <Download />
-                                            </span>
+                                            </span> */}
                                         </span>
-                                        <span className="nav-link-text">Import</span>
+                                        <span className="nav-link-text">Truck(10)</span>
                                     </Nav.Link>
                                 </Nav.Item>
-                                <Nav.Item>
+                                {/* <Nav.Item>
                                     <Nav.Link>
                                         <span className="nav-icon-wrap">
                                             <span className="feather-icon">
@@ -109,9 +106,9 @@ const ContactAppSidebar = () => {
                                         </span>
                                         <span className="nav-link-text">Print</span>
                                     </Nav.Link>
-                                </Nav.Item>
+                                </Nav.Item> */}
                             </Nav>
-                        </div>
+                        {/* </div>
                         <div className="separator separator-light" />
                         <div className="d-flex align-items-center justify-content-between mb-2">
                             <div className="title-sm text-primary mb-0">Labels</div>
@@ -149,9 +146,9 @@ const ContactAppSidebar = () => {
                                         <span className="badge badge-pill badge-sm badge-soft-primary ms-auto">34</span>
                                     </Nav.Link>
                                 </Nav.Item>
-                            </Nav>
+                            </Nav> */}
                         </div>
-                        <div className="separator separator-light" />
+                        {/* <div className="separator separator-light" />
                         <div className="d-flex align-items-center justify-content-between mb-4">
                             <div className="title-sm text-primary mb-0">Tags</div>
                             <Button variant="light" size="xs" className="btn-icon btn-rounded" onClick={() => setAddTags(!addTags)} >
@@ -168,11 +165,11 @@ const ContactAppSidebar = () => {
                             <HkBadge as={Link} to="#" bg="white" className="badge-light" outline text="dark" >Angular Developer</HkBadge>
                             <HkBadge as={Link} to="#" bg="white" className="badge-light" outline text="dark" >promotion</HkBadge>
                             <HkBadge as={Link} to="#" bg="white" className="badge-light" outline text="dark" >Advertisement</HkBadge>
-                        </div>
+                        </div> */}
                     </div>
                 </SimpleBar>
                 {/*Sidebar Fixnav*/}
-                <div className="contactapp-fixednav">
+                {/* <div className="contactapp-fixednav">
                     <div className="hk-toolbar">
                         <Nav className="nav-light">
                             <Nav.Item className="nav-link">
@@ -210,7 +207,7 @@ const ContactAppSidebar = () => {
                             </Nav.Item>
                         </Nav>
                     </div>
-                </div>
+                </div> */}
                 {/*/ Sidebar Fixnav*/}
             </Nav>
             {/* Create New Contact */}
@@ -222,5 +219,25 @@ const ContactAppSidebar = () => {
         </>
     )
 }
-
 export default ContactAppSidebar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,6 @@ import { Button, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import HkBadge from '../../../components/@hk-badge/@hk-badge';
-
 //Images
 import avatar1 from '../../../assets/dist/img/avatar1.jpg';
 import avatar2 from '../../../assets/dist/img/avatar2.jpg';
@@ -14,7 +13,6 @@ import avatar8 from '../../../assets/dist/img/avatar8.jpg';
 import avatar9 from '../../../assets/dist/img/avatar9.jpg';
 import avatar10 from '../../../assets/dist/img/avatar10.jpg';
 import avatar13 from '../../../assets/dist/img/avatar13.jpg';
-
 //Custom Sorting Caret
 const customCaret = (order, column) => {
     if (!order) return (<span>&nbsp;&nbsp;&nbsp;&nbsp; <ArrowsSort size={14} strokeWidth={2.5} /> </span>);
@@ -30,7 +28,6 @@ const customCaret = (order, column) => {
 const headerSortingClasses = (column, sortOrder, isLastSorting, colIndex) => (
     sortOrder === 'asc' ? 'text-primary' : 'text-primary'
 );
-
 //Custom Avatar Container
 const nameFormater = (cell) => {
     return (
@@ -49,8 +46,6 @@ const nameFormater = (cell) => {
         ))
     )
 }
-
-
 //Custom Tag Container
 const tagFormater = (cell) => {
     return (
@@ -59,7 +54,6 @@ const tagFormater = (cell) => {
         ))
     )
 }
-
 //Custom Action Container
 const actionFormater = (cell) => {
     return (
@@ -127,8 +121,6 @@ const actionFormater = (cell) => {
         ))
     )
 }
-
-
 export const columns = [
     {
         dataField: "id",
@@ -143,7 +135,7 @@ export const columns = [
     },
     {
         dataField: "name",
-        text: "Name",
+        text: "Asset Name",
         sort: true,
         formatter: nameFormater,
         sortCaret: customCaret,
@@ -152,7 +144,7 @@ export const columns = [
     },
     {
         dataField: "email",
-        text: "Email Address",
+        text: "Asset Code",
         sort: true,
         formatter: (cell) => <span className="text-truncate mw-150p d-block">{cell}</span>,
         sortCaret: customCaret,
@@ -160,14 +152,14 @@ export const columns = [
     },
     {
         dataField: "phone",
-        text: "Phone",
+        text: "category",
         sort: true,
         sortCaret: customCaret,
         headerSortingClasses
     },
     {
         dataField: "tags",
-        text: "Tags",
+        text: "Status",
         sort: true,
         formatter: tagFormater,
         sortCaret: customCaret,
@@ -175,7 +167,35 @@ export const columns = [
     },
     {
         dataField: "labels",
-        text: "Labels",
+        text: "Locations",
+        sort: true,
+        sortCaret: customCaret,
+        headerSortingClasses
+    },
+    {
+        dataField: "labels",
+        text: "Make ",
+        sort: true,
+        sortCaret: customCaret,
+        headerSortingClasses
+    },
+    {
+        dataField: "labels",
+        text: "Year",
+        sort: true,
+        sortCaret: customCaret,
+        headerSortingClasses
+    },
+    {
+        dataField: "labels",
+        text: "HM",
+        sort: true,
+        sortCaret: customCaret,
+        headerSortingClasses
+    },
+    {
+        dataField: "labels",
+        text: "Mileage",
         sort: true,
         sortCaret: customCaret,
         headerSortingClasses
@@ -193,7 +213,6 @@ export const columns = [
         formatter: actionFormater,
     },
 ];
-
 export const data = [
     {
         id: 1,
@@ -206,7 +225,6 @@ export const data = [
         dateCreated: "13 Jan, 2020",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 2,
         star: true,
@@ -218,7 +236,6 @@ export const data = [
         dateCreated: "13 Jan, 2020",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 3,
         star: false,
@@ -230,7 +247,6 @@ export const data = [
         dateCreated: "13 Jan, 2019",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 4,
         star: true,
@@ -253,7 +269,6 @@ export const data = [
         dateCreated: "3 July, 2020",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 6,
         star: true,
@@ -276,7 +291,6 @@ export const data = [
         dateCreated: "24 Jun, 2019",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 8,
         star: false,
@@ -288,7 +302,6 @@ export const data = [
         dateCreated: "24 Jun, 2019",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 9,
         star: true,
@@ -300,7 +313,6 @@ export const data = [
         dateCreated: "30 Mar, 2019",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 10,
         star: true,
@@ -312,7 +324,6 @@ export const data = [
         dateCreated: "21 Feb, 2019",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
     {
         id: 11,
         star: false,
@@ -324,6 +335,40 @@ export const data = [
         dateCreated: "14 Jan, 2019",
         actions: [{ archiveLink: "#", editLink: "edit-contact", deleteLink: "#" }]
     },
-
-
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

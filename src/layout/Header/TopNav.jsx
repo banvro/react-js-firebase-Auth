@@ -60,7 +60,14 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
             console.error('Sign-out error:', error);
           });
       };
-    
+
+      
+      const email = localStorage.getItem("email");
+      const username = localStorage.getItem("username");
+      const name = localStorage.getItem("name");
+     
+      console.log(email, username, name, "ooooooooooooooooooooooooooo")
+     
 
 
     return (
@@ -384,7 +391,7 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
                                             </div>
                                             <div className="media-body">
                                                 <Dropdown>
-                                                    <Dropdown.Toggle as={Link} to="#" className="d-block fw-medium text-dark">Hencework</Dropdown.Toggle>
+                                                    <Dropdown.Toggle as={Link} to="#" className="d-block fw-medium text-dark">{name}</Dropdown.Toggle>
                                                     <Dropdown.Menu align="end">
                                                         <div className="p-2">
                                                             <div className="media align-items-center active-user mb-3">
@@ -394,7 +401,7 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
                                                                     </div>
                                                                 </div>
                                                                 <div className="media-body">
-                                                                    <Link to="#" className="d-flex link-dark">Hencework <i className="ri-checkbox-circle-fill fs-7 text-primary ms-1" />
+                                                                    <Link to="#" className="d-flex link-dark">Name <i className="ri-checkbox-circle-fill fs-7 text-primary ms-1" />
                                                                     </Link>
                                                                     <Link to="#" className="d-block fs-8 link-secondary">
                                                                         <u>Manage your account</u>
@@ -409,7 +416,7 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
                                                                 </div>
                                                                 <div className="media-body">
                                                                     <Link to="#" className="d-block link-dark">Jampack Team</Link>
-                                                                    <Link to="#" className="d-block fs-8 link-secondary">contact@hencework.com</Link>
+                                                                    <Link to="#" className="d-block fs-8 link-secondary">{email}</Link>
                                                                 </div>
                                                             </div>
                                                             <Button variant="outline-light" size="sm" className="btn-block">
@@ -424,7 +431,7 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
                                                         </div>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
-                                                <div className="fs-7">contact@hencework.com</div>
+                                                <div className="fs-7">{email}</div>
                                                 <Link to="signin"  onClick={handleSignOut} className="d-block fs-8 link-secondary">
                                                     <u>Sign Out</u>
                                                 </Link>

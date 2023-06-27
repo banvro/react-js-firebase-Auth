@@ -13,6 +13,7 @@ margin-bottom: 2%;
 }
 .pic{
     width: 65px;
+    margin-top: -4px;
 }
 .sign{
     display: flex;
@@ -173,4 +174,31 @@ form.mains{
     z-index: 2;
     margin-right: 14px;
     color:#8c8c8c
+}
+#login{
+    background-color: #008080;
+    color: white;
+    font-weight: 600;
+}
+.abc{
+
+    /* padding: 0px 12px; */
+    padding-left: 0rem !important;
+    margin-left: 16px !important;
+
+}
+.signspace{
+    padding: 0px 15px;
+}
+
+.padapu{
+    padding: 0px 20px;
+    padding-bottom: 30px;
+}
+
+/* forget css  */
+.adoading {
+    width: 400px;
+    padding: 19px;
+    padding-top: 5px;
 }
