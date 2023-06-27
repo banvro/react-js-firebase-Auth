@@ -52,34 +52,19 @@ const Signup = () => {
       if (password.length < 6) {
         throw new Error('Password must be at least 6 characters long');
       }
+      console.log("pppppppppppppppppppppppppppppppppppppppp")
+      console.log(name, "ssssss")
 
-      const userCredential = await createUserWithEmailAndPassword(auth, email, name, password);
-      const user = userCredential.user;
-      console.log('User created:', user);
-
-      // addDoc(collection(db, 'users'), {
-      //   userName: username,
-      //   userEmail: email,
-      //   role:'user',
-      //   password: password,
-      //   timestamp: Timestamp.now()
-      // });
-        try {
-          const collectionRef = db.collection('users');
-          await collectionRef.add({
-            userName: username,
-            userEmail: email,
-            role:'user',
-            password: password,
-            timestamp: Timestamp.now()
-            });
-          console.log('Data saved to Firestore successfully');
-        } catch (error) {
-          console.error('Error saving data to Firestore:', error);
-        }
+      addDoc(collection(db, 'users'), {
+        userName: username,
+        userEmail: email,
+        role:'user',
+        password: password,
+        timestamp: Timestamp.now()
+      });
      
       signUp(email, password);
-      // window.location.href = '/signin';
+      window.location.href = '/signin';
     } catch (err) {
       alert(err);
     }

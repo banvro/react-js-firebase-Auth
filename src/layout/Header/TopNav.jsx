@@ -391,7 +391,7 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
                                             </div>
                                             <div className="media-body">
                                                 <Dropdown>
-                                                    <Dropdown.Toggle as={Link} to="#" className="d-block fw-medium text-dark">{name}</Dropdown.Toggle>
+                                                    <Dropdown.Toggle as={Link} to="#" className="d-block fw-medium text-dark">Name</Dropdown.Toggle>
                                                     <Dropdown.Menu align="end">
                                                         <div className="p-2">
                                                             <div className="media align-items-center active-user mb-3">
