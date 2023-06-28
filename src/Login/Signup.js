@@ -4,7 +4,7 @@ import '../CSS/Signup.css';
 
 import { signInWithPopup } from "firebase/auth";
 
-import { db, auth, provider } from '../Login/Firebase';
+import { db, auth, provider, providerfb } from '../Login/Firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { useUserAuth } from './AuthContext';
 
@@ -71,8 +71,10 @@ const Signup = () => {
   }
 
   const handleFacebookLogin = async () => {
+    console.log('User trying in with Facebook:');
+
     try {
-      const result = await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, providerfb);
       const user = result.user;
       console.log('User logged in with Facebook:', user);
       // Perform any additional actions or store user information as needed
