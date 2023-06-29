@@ -1,17 +1,28 @@
 
 
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
-import React from "react";
-import { useUserAuth } from "./AuthContext";
-import { Redirect  } from 'react-router-dom';
-const PrivateRoute = ({ children }) => {
-  const { user } = useUserAuth();
+const ProtectedRoute = ({ children, ...rest }) => {
+  const isAuthenticated = !!localStorage.getItem('Accesstoken');
 
-  console.log("Check user in Private: ", user);
-  if (!user) {
-    return <Redirect to="/signin" />;
-  }
-  return children;
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        isAuthenticated ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/signin',
+              state: { from: location }
+            }}
+          />
+        )
+      }
+    />
+  );
 };
 
-export default PrivateRoute;
+export default ProtectedRoute;

@@ -5,81 +5,56 @@ import { Redirect, useHistory } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Puff } from 'react-loader-spinner'
 import { useUserAuth } from './AuthContext'
+
+
 const Signin = () => {
-
+  const [isInitialLoad, setInitialLoad] = useState(true);
   const [isVisible, setVisible] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setpassword] = useState('');
   const [loading, setLoading] = useState(false);
-  // const{login}=useContext(AuthContext)
-  // const { login } = useAuth()
-  const { logIn, googleSignIn } = useUserAuth();
-  // let history = useHistory();
-  const toggle = () => {
-    setVisible(!isVisible);
-  };
-  //   const signIn=(e)=>{
-  //     e.preventDefault();
-
-
-  //     navigate('/dashboard', { replace: true });
-
-  //     signInWithEmailAndPassword(auth ,email,password)
-  //     .then((userCredential)=>{
-  //       console.log (userCredential)
-  //     }).catch((error)=>{
-  //       console.log(error)
-  //     })
-
-
-
-  //        // Perform your signin logic here
-  //     // Assuming signin is successful, navigate to the dashboard page
-
-
-  //   }
+  const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('Accesstoken');
-    if(token !== null) {
-      window.location.href = '/';
-      console.log(token, "qqqqqqqqqqqqqqqqqqqqqqq");
+    if (token !== null) {
+      setRedirectToDashboard(true);
     }
-}, []);
-
+    setInitialLoad(false);
+  }, []);
+  const toggle = () => {
+    setVisible(!isVisible);
+  };
   const onLogin = (e) => {
-
-    // setLoading(true)
     e.preventDefault();
+    setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        setLoading(false)
+        setLoading(false);
         const user = userCredential._tokenResponse.refreshToken;
-        let user2 = userCredential.user.accessToken
+        let user2 = userCredential.user.accessToken;
         localStorage.setItem('Accesstoken', user2);
         localStorage.setItem('Refreshtoken', user);
         localStorage.setItem('email', userCredential.user.email);
         localStorage.setItem('name', userCredential.user.displayName);
         console.log(userCredential, 'userCredential');
-        // login(email.current.value, password.current.value)
-         logIn(email, password);
-         window.location.href = '/';
-        
-        console.log(user);
-
-        console.log("succesfully login")
+        setRedirectToDashboard(true);
+        console.log('successfully login');
       })
       .catch((error) => {
-        setLoading(false)
+        setLoading(false);
         const errorCode = error.code;
-        alert('Wrong Email/Password')
+        alert('Wrong Email/Password');
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
-        console.log("invalid please check your email and password")
+        console.log(errorCode, errorMessage);
+        console.log('Invalid email or password');
       });
-     
+  };
 
+  if (redirectToDashboard) {
+    return <Redirect to="/dashboard" />;
   }
+
   return (
     <>
       <div className='main'>
@@ -162,7 +137,7 @@ const Signin = () => {
 
 
     </>
-  )
-}
+  );
+};
 
-export default Signin
+export default Signin;
