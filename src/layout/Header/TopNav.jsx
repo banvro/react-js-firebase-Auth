@@ -52,7 +52,9 @@ const TopNav = ({ navCollapsed, toggleCollapsedNav }) => {
             localStorage.removeItem('email');
             console.log(tokenw, "yyyyyyyyyy")
             // Sign-out successful
+            window.location.href = '/signin';
             console.log('User signed out successfully.');
+           
             // Add any additional code you want to run after sign-out
           })
           .catch((error) => {

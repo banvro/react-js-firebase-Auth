@@ -20,6 +20,10 @@
 .signup{
     font-weight: 400;
 }
+#google:hover{
+  color: white;
+  background-color: #3079e5;
+}
 
   .horizontal-line {
     display: flex;

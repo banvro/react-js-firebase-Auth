@@ -15,13 +15,13 @@ const Signin = () => {
   const [loading, setLoading] = useState(false);
   const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem('Accesstoken');
-    if (token !== null) {
-      setRedirectToDashboard(true);
-    }
-    setInitialLoad(false);
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem('Accesstoken');
+  //   if (token !== null) {
+  //     setRedirectToDashboard(true);
+  //   }
+  //   setInitialLoad(false);
+  // }, []);
   const toggle = () => {
     setVisible(!isVisible);
   };

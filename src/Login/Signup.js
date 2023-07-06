@@ -128,7 +128,7 @@ const Signup = () => {
             <i class="fa-brands fa-google"> </i> &nbsp;&nbsp;
             <span className='signupg'>Sign Up With Gmail</span>
           </button>
-          <button class="btn btn-primary" className="rounded-pill primary" type="button" onClick={handleFacebookLogin}> <i class="fa-brands fa-facebook"></i> &nbsp; &nbsp;<span className='signupfb'>Sign Up With Facebook</span></button>
+          {/* <button class="btn btn-primary" className="rounded-pill primary" type="button" onClick={handleFacebookLogin}> <i class="fa-brands fa-facebook"></i> &nbsp; &nbsp;<span className='signupfb'>Sign Up With Facebook</span></button> */}
 
         </div>
         <div class="horizontal-line">

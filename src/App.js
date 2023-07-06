@@ -26,7 +26,7 @@ function App() {
           <Route path="/signin" component={Signin} />
           <Route path="/signup" component={Signup} />
           <Route path="/forget" component={Forget} />
-            <Redirect exact from="/" to="/dashboard" />
+            <Redirect exact from="/" to="/signin" />
              
             <Route path="/auth" render={(props) => <ProtectedRoute> <AuthRoutes {...props} /> </ProtectedRoute>} />
             <Route path="/" render={(props) => <ProtectedRoute> <ClassicRoutes {...props} /></ProtectedRoute>} />
